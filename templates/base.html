@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>co-worker</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-LN1KZPhdcNbx3v1I75wQYL8jfp4Po9thv/bVn4CfWn1olvs3f6W4I8f0pOVvfu7" crossorigin="anonymous">
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ url_for('index') }}">Home</a></li>
+							<li>
+								<a href="#">Diensten</a>
+								<ul>
+									<li><a href="{{ url_for('office_assistant') }}">Office assistant</a></li>
+									<li><a href="{{ url_for('opvolgen_betalingen') }}">Opvolgen betalingen</a></li>
+									<li><a href="{{ url_for('simpele_boekingen') }}">Simpele boekingen</a></li>
+									<li><a href="{{ url_for('social_media') }}">Social media</a></li>
+									<li><a href="{{ url_for('onderhoud_website') }}">Onderhoud website</a></li>
+									<li><a href="{{ url_for('consulting') }}">Consulting</a></li>
+									<li><a href="{{ url_for('sales_management') }}">Sales management</a></li>
+									<li><a href="{{ url_for('marketing_sales') }}">Marketing and sales</a></li>
+									<li><a href="{{ url_for('sourcing') }}">Sourcing</a></li>
+									<li><a href="{{ url_for('purchase_management') }}">Purchase management</a></li>
+								</ul>
+							</li>
+							<li><a href="{{ url_for('contact') }}">Contact</a></li>
+							<li><a href="#" class="button primary">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>
+
+                {% block content %}
+
+                {% endblock %}
+
+			<!-- Footer -->
+				<footer id="footer">
+					<p class="">Copannex<br>
+					            Eeckhoutmolenstraat 2 Bus A<br>
+					            8920 Langemark-Poelkapelle<br>
+					            BTW BE0700.389.686<br>
+					            <span class="elementor-icon-list-icon">
+									<i aria-hidden="true" class="fas fa-phone-alt"></i> </span>
+								<span class="elementor-icon-list-text">+32 493 96 46 99</span><br>
+			                    <a href="mailto:%20info@co-worker.be">
+									<span class="elementor-icon-list-icon">
+										<i aria-hidden="true" class="fas fa-envelope"></i></span>
+									<span class="elementor-icon-list-text">info@co-worker.be</span>
+								</a>
+
+							</p>
+
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Co-worker. All rights reserved.</li><li>Design by Co-worker</li>
+					</ul>
+					<ul class="copyright">
+						<li><a href="{{ url_for('privacy_policy') }}">Privacy policy</a></li><li><a href="{{ url_for('cookie_policy') }}">Cookie policy</a></li><li><a href="{{ url_for('disclaimer') }}">Disclaimer</a></li>
+					</ul>
+				</footer>
+		</div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/jquery.dropotron.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+	</body>
+</html>

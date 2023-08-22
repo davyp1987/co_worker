@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="banner0">
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-3 col-12-large">
+					<p><span class="image"><img src="../static/images/co-worker.jpg" alt="" /></span></p>
+				</div>
+				<div class="col-3 col-12-medium">
+					<p>Co-worker ontzorgt bedrijven, laat zelfstandigen,<br />
+						werkgevers, werknemers zich focussen op hun kerntaken,<br />
+						waardoor de rentabiliteit de hoogte in gaat.</p>
+				</div>
+				<div class="col-3 col-12-medium">
+					<p>Co-worker creert meer ruimte in uw drukke agenda<br />
+						en door onze focus te leggen en onze professionele aanpak<br />
+						brengen wij uw opdrachten tot een goed einde.</p>
+				</div>
+				<div class="col-3 col-12-medium">
+					<p>Bij Co-worker focussen we ons op kleine bedrijven die een helpende<br />
+						hand kunnen gebruiken bij admin, sales, social media,...<br />
+						al de zaken die anders te veel tijd van de kerntaken wegnemen.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#one" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- One -->
+<section id="one" class="spotlight style1 bottom">
+	<span class="image fit main"><img src="../static/images/pic01.jpg" alt="" /></span>
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-3 col-12-medium">
+					<p>Co-worker ontzorgt bedrijven, laat zelfstandigen,<br />
+						werkgevers, werknemers zich focussen op hun kerntaken,<br />
+						waardoor de rentabiliteit de hoogte in gaat.</p>
+				</div>
+				<div class="col-3 col-12-medium">
+					<p>Co-worker creert meer ruimte in uw drukke agenda<br />
+						en door onze focus te leggen en onze professionele aanpak<br />
+						brengen wij uw opdrachten tot een goed einde.</p>
+				</div>
+				<div class="col-3 col-12-medium">
+					<p>Bij Co-worker focussen we ons op kleine bedrijven die een helpende<br />
+						hand kunnen gebruiken bij admin, sales, social media,...<br />
+						al de zaken die anders te veel tijd van de kerntaken wegnemen.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#four" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>Over ons</h2>
+			<p>Co-worker ontzorgt bedrijven en ondernemers<br />
+				op vele vlakken zodat ze zich kunnen<br />
+				focussenop de kerntaken binnen hun bedrijf.</p>
+			<p>Velen zullen zich herkennen in de volgende situatie:<br /><br />
+				U hebt een schitterend idee en wilt deze activiteit<br />
+				 dan ook op zelfstandige basis uitoefenen en ondernemen. <br />
+				Vol goede moed start u een onderneming gefocused <br />
+				om de onderneming te laten renderen en te slagen.</p>
+			<p>Zo gefocused op de kerntaken, dat u vele bijkomstige taken <br />
+				die bij een onderneming komen te kijken <br />
+				(en de gevraagde tijd) even een bijzaak zijn.</p>
+			<p>
+				Na enkele weken snapt u het al, de bijkomstige taken <br />
+				nemen "te" veel tijd in beslag en u verliest uw aandacht/ of<br />
+				 houdt u zich minder bezig met uw kerntaken. En uitbreiding naar <br />
+				 een fulltime of halftime werknemer is te kostelijk of u <br />
+				 hebt niet genoeg uren voor een extra kracht. <br />
+				 Dit betekend dat u het zelf moet doen tijdens uw kostbare tijd... . <br />
+				 Met als resultaat dat de bijzaken half afgewerkt of niet professioneel overkomen.
+			</p>
+			<p>
+				Net daarom rijkt Co-worker u de helpende hand. Wij nemen met plezier<br />
+				de bijzaken over en dit op professionele wijze.
+			</p>
+			<p>
+				Wij bieden een luisterend oor en een helpende hand, zo kunt <br />
+				u zich terug focussen op uw kerntaken. Wij ontzorgen u.
+			</p>
+		</header>
+		<span class="image"><img src="../static/images/pic01.jpg" alt="" /></span>
+	</div>
+	<a href="#one" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Four -->
+<section id="four" class="wrapper style1 special fade-up">
+	<div class="container">
+		<header class="major">
+			<h2>Onze diensten</h2>
+		</header>
+		<div class="box alt">
+			<div class="row gtr-uniform">
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-handshake"></span>
+					<a href="{{ url_for('office_assistant') }}"><h3>Office assistant</h3></a>
+					<p>Geen tijd om offertes, bestelbons, facturen correct op te maken of administratieve handelingen tot een goed einde te brengen? Alles klaarzetten voor de boekhouder? Een Co- worker staat tot uw dienst</p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-file-invoice-dollar"></span>
+					<a href="{{ url_for('opvolgen_betalingen') }}"><h3>Opvolgen betalingen</h3></a>
+					<p>Betalingen opvolgen? aanmaningen tot betalingen? </p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-calculator"></span>
+					<a href="{{ url_for('simpele_boekingen') }}"><h3>Simpele boekingen</h3></a>
+					<p>Bent u de zware boekhoudkosten beu? Wij kunnen simpele boekhoudingen aan die het werk van uw boekhouder en zijn factuur enorm verlicht.</p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-tools"></span>
+					<a href="{{ url_for('social_media') }}"><h3>Social media</h3></a>
+					<p>Schitterende posts met gerealiseerde werken, het onderhouden van alle social media platformen, etc ... Co-worker laat uw bedrijf schitteren op ieder platform.</p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-wrench"></span>
+					<a href="{{ url_for('onderhoud_website') }}"><h3>Onderhoud website</h3></a>
+					<p>Uw website heeft frequent aanpassingen of onderhoudsbeurt nodig?</p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-question-circle"></span>
+					<a href="{{ url_for('consulting') }}"><h3>Consulting</h3></a>
+					<p></p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-percent"></span>
+					<a href="{{ url_for('sales_management') }}"><h3>Sales management</h3></a>
+					<p></p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-bullhorn"></span>
+					<a href="{{ url_for('marketing_sales') }}"><h3>Marketing and sales</h3></a>
+					<p>Strategische plannen maken die uw bedrijf een boost geven? Wij werken hier graag aan mee!</p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-globe"></span>
+					<a href="{{ url_for('sourcing') }}"><h3>Sourcing</h3></a>
+					<p>Zaken nodig uit het buitenland maar niet de geschikte leverancier? Met ons wereldwijd netwerk vinden wij zeker uw ideale partners.</p>
+				</section>
+				<section class="col-4 col-6-medium col-12-xsmall">
+					<span class="icon solid alt major fa-file-invoice"></span>
+					<a href="{{ url_for('purchase_management') }}"><h3>Purchase management</h3></a>
+					<p>Aankoopstrategie nodig? Correct stockbeheer en just in time principe is u niet bekend? We nemen deze taak graag van u over en integreren dit in uw bedrijf.</p>
+				</section>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

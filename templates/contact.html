@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Main -->
+<div id="main" class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>Contact</h2>
+            <p><span class="elementor-icon-list-icon">
+                    <i aria-hidden="true" class="fas fa-phone-alt"></i> </span>
+                <span class="elementor-icon-list-text">+32 493 96 46 99</span><br>
+
+
+                <a href="mailto:%20info@co-worker.be">
+                    <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-envelope"></i></span>
+                    <span class="elementor-icon-list-text">info@co-worker.be</span>
+                </a>
+            </p>
+        </header>
+
+        <!-- Form -->
+        <section>
+            <h3>Stel hier uw vraag.</h3>
+            <form method="post" action="#">
+                <div class="row gtr-uniform gtr-50">
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="naam" id="naam" value="" placeholder="Naam*" />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="voornaam" id="voornaam" value="" placeholder="Voornaam*" />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="email" name="email" id="email" value="" placeholder="Email*" />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="telefoon" id="telefoon" value="" placeholder="Telefoon*" />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="bedrijfsnaam" id="bedrijfsnaam" value="" placeholder="Bedrijf*" />
+                    </div>
+                    <div class="col-12">
+                        <select name="reden" id="reden">
+                            <option value="">- Reden -</option>
+                            <option value="1">Prijsaanvraag</option>
+                            <option value="1">Dienst</option>
+                            <option value="1">Andere</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" id="message" placeholder="Stel je vraag hier." rows="6"></textarea>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <input type="checkbox" id="copy" name="copy">
+                        <label for="copy">Ik ga akkoord dat mijn gegevens gebruikt worden om deze vraag te beantwoorden.</label>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Verzenden" class="primary" /></li>
+                            <li><input type="reset" value="Wissen" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            Meer informatie over hoe wij gegevens bijhouden in de <a href="{{ url_for('privacy_policy') }}">privacy policy</a>.
+        </section>
+    </div>
+</div>
+
+{% endblock %}
