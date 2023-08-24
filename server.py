@@ -1,13 +1,16 @@
-from flask import Flask, render_template, url_for
+"""Module server"""
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    """home url"""
     return render_template('index.html')
 
 @app.route('/index')
 def index():
+    """home url"""
     return render_template('index.html')
 
 @app.route('/diensten')
