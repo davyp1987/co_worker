@@ -22,33 +22,33 @@
         <!-- Form -->
         <section>
             <h3>Stel hier uw vraag.</h3>
-            <form method="post" action="#">
+            <form class="" action="/contact" method="post">
                 <div class="row gtr-uniform gtr-50">
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="naam" id="naam" value="" placeholder="Naam*" />
+                        <input class="form-control" type="text" name="naam" id="naam" value="" placeholder="Naam*" required />
                     </div>
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="voornaam" id="voornaam" value="" placeholder="Voornaam*" />
+                        <input class="form-control" type="text" name="voornaam" id="voornaam" value="" placeholder="Voornaam*" required />
                     </div>
                     <div class="col-6 col-12-xsmall">
-                        <input type="email" name="email" id="email" value="" placeholder="Email*" />
+                        <input class="form-control" type="email" name="email" id="email" value="" placeholder="Email*" required />
                     </div>
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="telefoon" id="telefoon" value="" placeholder="Telefoon*" />
+                        <input class="form-control" type="text" name="telefoon" id="telefoon" value="" placeholder="Telefoon*" required />
                     </div>
                     <div class="col-6 col-12-xsmall">
-                        <input type="text" name="bedrijfsnaam" id="bedrijfsnaam" value="" placeholder="Bedrijf*" />
+                        <input class="form-control" type="text" name="bedrijfsnaam" id="bedrijfsnaam" value="" placeholder="Bedrijf*" required />
                     </div>
                     <div class="col-12">
-                        <select name="reden" id="reden">
+                        <select class="form-control" name="reden" id="reden" required>
                             <option value="">- Reden -</option>
-                            <option value="1">Prijsaanvraag</option>
-                            <option value="1">Dienst</option>
-                            <option value="1">Andere</option>
+                            <option value="Prijsaanvraag">Prijsaanvraag</option>
+                            <option value="Dienst">Dienst</option>
+                            <option value="Andere">Andere</option>
                         </select>
                     </div>
                     <div class="col-12">
-                        <textarea name="message" id="message" placeholder="Stel je vraag hier." rows="6"></textarea>
+                        <textarea class="form-control" name="message" id="message" placeholder="Stel je vraag hier.*" rows="6" required></textarea>
                     </div>
                     <div class="col-6 col-12-medium">
                         <input type="checkbox" id="copy" name="copy">

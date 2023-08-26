@@ -1,12 +1,47 @@
 """Module server"""
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'dpouillie@gmail.com'
+app.config['MAIL_PASSWORD'] = 'yastuikoluklgfoz'
+mail = Mail(app)
+
+def send_test_email(result):
+    """ send test email """
+    msg = Message("Contact form from Co-worker website",
+                  sender="dpouillie@gmail.com",
+                  recipients=["davy.pouillie@gmail.com"])
+
+    msg.html = """
+    Hello there, <br><br>
+
+    You just receive a contact form from: <br><br>
+    Name: {} <br>
+    FirstName: {} <br>
+    Email: {} <br>
+    Phone: {} <br>
+    Company: {} <br>
+    Reason: {} <br>
+    Message: {} <br><br>
+    copy: {} <br><br>
+
+    regards, <br>
+    Webmaster
+
+    """.format(result['name'], result['firstname'], result['email'], result['phone'], result['company'], result['reason'], result['message'], result['copy'])
+
+    mail.send(msg)
 
 @app.route('/')
 def home():
     """home url"""
     return render_template('index.html')
+
 
 @app.route('/index')
 def index():
@@ -17,8 +52,26 @@ def index():
 def diensten():
     return render_template('diensten.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+
+    if request.method == 'POST':
+        result = {}
+
+        result['name'] = request.form['naam']
+        result['firstname'] = request.form['voornaam']
+        result['email'] = request.form['email'].replace(' ','').lower()
+        result['phone'] = request.form['telefoon']
+        result['company'] = request.form['bedrijfsnaam']
+        result['reason'] = request.form.get('reden')
+        result['message'] = request.form['message'].replace('\n', '<br>')
+        result['copy'] = request.form['copy']
+
+        send_test_email(result)
+        print("test")
+
+        return render_template('verzonden.html')
+
     return render_template('contact.html')
 
 @app.route('/office_assistant')
@@ -74,4 +127,4 @@ def disclaimer():
     return render_template('disclaimer.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  app.run(debug=True)
