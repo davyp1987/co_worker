@@ -4355,3 +4355,38 @@ body.is-touch #banner0 {
 	}
 
 }
+
+.cookie_box{
+	position: fixed;
+	left: 0;
+    bottom: 0;
+	width: 400px;
+	padding: 20px;
+	background:#fff;
+	text-align: center;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.cookie_box img{
+	width: 70px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 30px;
+}
+
+.cookie_box h3{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+    font-size: 30px;
+}
+
+.cookie_box button{
+	padding: 8px 25px;
+	background: #027cb7;
+	color: #fff;
+	font-size: 18px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
