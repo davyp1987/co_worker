@@ -1,41 +1,51 @@
 """Module server"""
+import json
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'dpouillie@gmail.com'
-app.config['MAIL_PASSWORD'] = 'yastuikoluklgfoz'
+def config_read():
+    """read config file"""
+    with open("configuration.json", "r") as jsonfile:
+        data = json.load(jsonfile)
+        app.config['MAIL_SERVER'] = data['smtp_settings']['MAIL_SERVER']
+        app.config['MAIL_PORT'] =  int(data['smtp_settings']['MAIL_PORT'])
+        app.config['MAIL_USE_SSL'] = bool(data['smtp_settings']['MAIL_USE_SSL'])
+        app.config['MAIL_USERNAME'] = data['smtp_settings']['MAIL_USERNAME']
+        app.config['MAIL_PASSWORD'] = data['smtp_settings']['MAIL_PASSWORD']
+
+config_read()
 mail = Mail(app)
 
 def send_test_email(result):
-    """ send test email """
-    msg = Message("Contact form from Co-worker website",
-                  sender="dpouillie@gmail.com",
-                  recipients=["davy.pouillie@gmail.com"])
+    try:
+        """ send test email """
+        msg = Message("Contact form from Co-worker website",
+                    sender="test@gmail.com",
+                    recipients=["davy.pouillie@gmail.com"])
 
-    msg.html = """
-    Hello there, <br><br>
+        msg.html = """
+        Hello there, <br><br>
 
-    You just receive a contact form from: <br><br>
-    Name: {} <br>
-    FirstName: {} <br>
-    Email: {} <br>
-    Phone: {} <br>
-    Company: {} <br>
-    Reason: {} <br>
-    Message: {} <br><br>
-    copy: {} <br><br>
+        You just receive a contact form from: <br><br>
+        Name: {} <br>
+        FirstName: {} <br>
+        Email: {} <br>
+        Phone: {} <br>
+        Company: {} <br>
+        Reason: {} <br>
+        Message: {} <br><br>
+        copy: {} <br><br>
 
-    regards, <br>
-    Webmaster
+        regards, <br>
+        Webmaster
 
-    """.format(result['name'], result['firstname'], result['email'], result['phone'], result['company'], result['reason'], result['message'], result['copy'])
+        """.format(result['name'], result['firstname'], result['email'], result['phone'], result['company'], result['reason'], result['message'], result['copy'])
 
-    mail.send(msg)
+        mail.send(msg)
+    except:
+        print("error")
 
 @app.route('/')
 def home():
