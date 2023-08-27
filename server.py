@@ -1,5 +1,7 @@
 """Module server"""
 import json
+import sys
+import os
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
@@ -7,7 +9,7 @@ app = Flask(__name__)
 
 def config_read():
     """read config file"""
-    with open("./configuration.json", "r") as jsonfile:
+    with open(os.path.join(sys.path[0], "configuration.json"), "r") as jsonfile:
         data = json.load(jsonfile)
         app.config['MAIL_SERVER'] = data['smtp_settings']['MAIL_SERVER']
         app.config['MAIL_PORT'] =  int(data['smtp_settings']['MAIL_PORT'])
