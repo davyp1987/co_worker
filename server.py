@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def config_read():
     """read config file"""
-    with open("configuration.json", "r") as jsonfile:
+    with open("./configuration.json", "r") as jsonfile:
         data = json.load(jsonfile)
         app.config['MAIL_SERVER'] = data['smtp_settings']['MAIL_SERVER']
         app.config['MAIL_PORT'] =  int(data['smtp_settings']['MAIL_PORT'])
@@ -19,6 +19,7 @@ config_read()
 mail = Mail(app)
 
 def send_test_email(result):
+    """send test email"""
     try:
         """ send test email """
         msg = Message("Contact form from Co-worker website",
